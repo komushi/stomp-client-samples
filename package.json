@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "stompjs":"2.3.3",
-    "sockjs-client":"*"
+    "sockjs-client":"*",
+    "prompt":"*"
   },
   "author": "",
   "license": "ISC"

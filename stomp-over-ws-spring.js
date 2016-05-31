@@ -18,9 +18,11 @@ var stompSuccessCallback = function (frame) {
     });
 
    	console.log ('STOMP: sending a message over WebSocket');
-  	var name = 'Lei Xu';
-  	stompClient.send('/app/textgreet', {}, name);
-  	stompClient.send('/app/jsongreet', {}, JSON.stringify({ 'name': name }))
+
+    sendName();
+  	// var name = 'Lei Xu';
+  	// stompClient.send('/app/textgreet', {}, name);
+  	// stompClient.send('/app/jsongreet', {}, JSON.stringify({ 'name': name }))
 
 };
 

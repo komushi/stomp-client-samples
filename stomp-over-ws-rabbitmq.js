@@ -1,5 +1,7 @@
 var Stomp = require('stompjs');
 var stompClient;
+var prompt = require('prompt');
+
 
 var url = 'ws://localhost:15674';
 
@@ -8,8 +10,10 @@ var stompSuccessCallback = function (frame) {
     console.log('STOMP: Connection successful: ' + frame);
 
     stompClient.subscribe('/topic/test', function(greeting){
-      console.log('/topic/test subscribed');
-      console.log(greeting);
+      // console.log('/topic/test subscribed');
+      console.log('Received:' + greeting.body);
+
+      sendName();
     });
 
     stompClient.subscribe('/topic/jsongreetings', function(greeting){
@@ -38,13 +42,25 @@ var stompConnect = function () {
 }
 
 var sendName = function (){
-  var name = 'Lei Xu';
+  // var name = 'Lei Xu';
 
-  stompClient.send('/topic/test', {}, name);
+  // stompClient.send('/topic/test', {}, name);
 
-  stompClient.send('/topic/jsongreetings', {}, JSON.stringify({ 'name': name }));
+  // stompClient.send('/topic/jsongreetings', {}, JSON.stringify({ 'name': name }));
 
+
+
+
+  prompt.get(['send'], function (err, result) {
+    //
+    // Log the results.
+    //
+    // console.log('Command-line input received:');
+    // console.log('  username: ' + result.username);
+
+    stompClient.send('/topic/test', {}, result.send);
+  });
 }
 
-
+prompt.start();
 stompConnect();
