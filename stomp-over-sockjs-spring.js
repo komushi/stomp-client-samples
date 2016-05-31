@@ -5,15 +5,16 @@ var socket;
 var url = 'http://localhost:8080';
 
 var stompSuccessCallback = function (frame) {
-    console.log('STOMP: Connection successful: ' + frame);
+  console.log('STOMP: Connection successful: ' + frame);
 
-    stompClient.subscribe(url + '/topic/greetings', function(greeting){
-      console.log('/topic/greetings subscribed');
-      console.log(greeting);
-    });
+  stompClient.subscribe(url + '/topic/greetings', function(greeting){
+    console.log('/topic/greetings subscribed');
+    console.log(greeting);
+  });
 
-  var name = 'Lei Xu'
-  stompClient.send(url + '/app/hello', {}, JSON.stringify({ 'name': name }))
+  console.log ('STOMP: sending a message over SockJS');
+
+  sendName();
 
 };
 

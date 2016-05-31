@@ -17,7 +17,7 @@ var stompSuccessCallback = function (frame) {
       console.log(greeting);
     });
 
-   	console.log ('STOMP: sending a message');
+   	console.log ('STOMP: sending a message over WebSocket');
   	var name = 'Lei Xu';
   	stompClient.send('/app/textgreet', {}, name);
   	stompClient.send('/app/jsongreet', {}, JSON.stringify({ 'name': name }))
@@ -38,6 +38,15 @@ var stompConnect = function () {
     stompClient = Stomp.overWS(url + '/endpoint');
     
     stompClient.connect('guest', 'guest', stompSuccessCallback, stompFailureCallback);
+}
+
+var sendName = function (){
+  var name = 'Lei Xu';
+
+  stompClient.send('/app/textgreet', {}, name);
+
+  stompClient.send('/app/jsongreet', {}, JSON.stringify({ 'name': name }));
+
 }
 
 stompConnect();

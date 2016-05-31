@@ -17,7 +17,7 @@ var stompSuccessCallback = function (frame) {
       console.log(greeting);
     });
 
-   	console.log ('STOMP: sending a message');
+   	console.log ('STOMP: sending a message over WebSocket');
     sendName();
 
 };
