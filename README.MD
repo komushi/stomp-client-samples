@@ -10,14 +10,14 @@ cd stomp-client-samples
 npm install
 ```
 
-###Stomp Demo over WebSocket to a Spring Boot Application as WebSocket Broker
+###Stomp Demo 1 over WebSocket to a Spring Boot Application as WebSocket Broker
 The Spring Boot Application Source Code:
 https://github.com/komushi/spring-stomp-ws.git
 ```
 node.js stomp-over-ws-spring.js
 ```
 
-###Stomp Demo over WebSocket to a RabbitMQ Instance as WebSocket Broker
+###Stomp Demo 2 over WebSocket to a RabbitMQ Instance as WebSocket Broker
 ```
 node.js stomp-over-ws-rabbitmq.js
 ```
