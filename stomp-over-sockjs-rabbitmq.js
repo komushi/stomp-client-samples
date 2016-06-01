@@ -34,7 +34,7 @@ var stompConnect = function () {
 }
 
 var sendName = function (){
-  var name = 'Lei Xu';
+  var name = 'komushi';
   stompClient.send('/queue/test', {}, JSON.stringify({ 'name': name }));
 }
 
