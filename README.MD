@@ -30,4 +30,5 @@ node.js stomp-over-sockjs-rabbitmq.js
 ###Stomp Demo 4 over SockJS to a Spring Boot Application as SockJS Server
 ####In fact the following code runs in browser only - not on node.js.
 stomp-over-sockjs-spring.js
+The Spring Boot Application Source Code:
 

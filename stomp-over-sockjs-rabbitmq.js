@@ -1,5 +1,6 @@
 var Stomp = require('stompjs');
 var SockJS = require('sockjs-client');
+var randomWords = require('random-words');
 var stompClient;
 var socket;
 var url = 'http://localhost:15674';
@@ -7,14 +8,11 @@ var url = 'http://localhost:15674';
 var stompSuccessCallback = function (frame) {
   console.log('STOMP: Connection successful: ' + frame);
 
-  stompClient.subscribe('/queue/test', function(greeting){
-    console.log('/queue/test subscribed');
+  stompClient.subscribe('/topic/dest', function(greeting){
+    console.log('/topic/dest subscribed');
     console.log(greeting);
   });
 
-  console.log ('STOMP: sending a message over SockJS');
-
-  sendName();
 };
 
 var stompFailureCallback = function (error) {
@@ -33,10 +31,15 @@ var stompConnect = function () {
     stompClient.connect('guest', 'guest', stompSuccessCallback, stompFailureCallback);
 }
 
-var sendName = function (){
-  var name = 'komushi';
-  stompClient.send('/queue/test', {}, JSON.stringify({ 'name': name }));
+var sendMessage = function (){
+  var row = {};
+  row.name = randomWords();
+  row.sales = Math.round(Math.random() * 100);
+
+  stompClient.send('/topic/dest', {}, JSON.stringify(row));
 }
 
 stompConnect();
+
+setInterval(sendMessage, 1000);
 

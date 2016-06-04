@@ -1,5 +1,5 @@
 {
-  "name": "stomp_client",
+  "name": "stomp_client_samples",
   "version": "1.0.0",
   "description": "",
   "main": "test.js",
@@ -9,7 +9,8 @@
   "dependencies": {
     "stompjs":"2.3.3",
     "sockjs-client":"*",
-    "prompt":"*"
+    "prompt":"*",
+    "random-words":"*"
   },
   "author": "",
   "license": "ISC"
