@@ -7,9 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "stompjs":"2.3.3",
-    "sockjs-client":"*",
-    "prompt":"*",
+    "stompjs":"2.3.*",
+    "q": "1.4.*",
+    "sockjs-client":"1.1.*",
+    "prompt":"1.*",
     "random-words":"*"
   },
   "author": "",

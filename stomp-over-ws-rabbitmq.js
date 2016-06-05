@@ -3,7 +3,7 @@ var stompClient;
 var prompt = require('prompt');
 
 
-var url = 'ws://localhost:15674';
+var endpoint = 'ws://127.0.0.1:15674/ws';
 var myName;
 
 var stompSuccessCallback = function (frame) {
@@ -40,9 +40,9 @@ var stompFailureCallback = function (error) {
 var stompConnect = function () {
     console.log('STOMP: Attempting connection');
     // recreate the stompClient to use a new WebSocket
-    stompClient = Stomp.overWS(url + '/ws');
+    stompClient = Stomp.overWS(endpoint);
     
-    stompClient.connect('guest', 'guest', stompSuccessCallback, stompFailureCallback);
+    stompClient.connect('admin', 'password', stompSuccessCallback, stompFailureCallback);
 }
 
 var sendContents = function () {

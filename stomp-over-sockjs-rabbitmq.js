@@ -29,7 +29,7 @@ var stompConnect = function () {
     stompClient = Stomp.over(socket);
 
     stompClient.connect('guest', 'guest', stompSuccessCallback, stompFailureCallback);
-}
+};
 
 var sendMessage = function (){
   var row = {};
@@ -38,7 +38,7 @@ var sendMessage = function (){
   row.sales = Math.round(Math.random() * 100);
 
   stompClient.send('/topic/dest', {}, JSON.stringify(row));
-}
+};
 
 stompConnect();
 
