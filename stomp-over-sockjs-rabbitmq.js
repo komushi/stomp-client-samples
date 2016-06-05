@@ -34,6 +34,7 @@ var stompConnect = function () {
 var sendMessage = function (){
   var row = {};
   row.name = randomWords();
+  row.type = "Type" + Math.floor(Math.random() * 2);
   row.sales = Math.round(Math.random() * 100);
 
   stompClient.send('/topic/dest', {}, JSON.stringify(row));
@@ -41,5 +42,5 @@ var sendMessage = function (){
 
 stompConnect();
 
-setInterval(sendMessage, 1000);
+setInterval(sendMessage, 2000);
 
