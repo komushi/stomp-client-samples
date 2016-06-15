@@ -5,6 +5,7 @@ var prompt = require('prompt');
 var randomWords = require('random-words');
 var url = require('url');
 var stompClient, socket;
+// active apollo
 var endpoint = 'ws://localhost:61623/';
 var usr = 'admin';
 var pwd = 'password';

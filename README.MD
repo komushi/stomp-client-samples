@@ -32,3 +32,14 @@ node stomp-over-sockjs-rabbitmq.js
 stomp-over-sockjs-spring.js
 The Spring Boot Application Source Code:
 
+###Stomp Demo 5 over SockJS to a RabbitMQ Instance as SockJS Server
+
+Start Apollo
+```
+/usr/local/var/apollo/bin/apollo-broker run
+```
+
+Start the demo
+```
+node stomp-over-ws-apollo.js
+```
