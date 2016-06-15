@@ -14,17 +14,17 @@ npm install
 The Spring Boot Application Source Code:
 https://github.com/komushi/spring-stomp-ws.git
 ```
-node.js stomp-over-ws-spring.js
+node stomp-over-ws-spring.js
 ```
 
 ###Stomp Demo 2 over WebSocket to a RabbitMQ Instance as WebSocket Broker
 ```
-node.js stomp-over-ws-rabbitmq.js
+node stomp-over-ws-rabbitmq.js
 ```
 
 ###Stomp Demo 3 over SockJS to a RabbitMQ Instance as SockJS Server
 ```
-node.js stomp-over-sockjs-rabbitmq.js
+node stomp-over-sockjs-rabbitmq.js
 ```
 
 ###Stomp Demo 4 over SockJS to a Spring Boot Application as SockJS Server

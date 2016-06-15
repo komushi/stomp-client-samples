@@ -42,7 +42,7 @@ var stompConnect = function () {
     // recreate the stompClient to use a new WebSocket
     stompClient = Stomp.overWS(endpoint);
     
-    stompClient.connect('admin', 'password', stompSuccessCallback, stompFailureCallback);
+    stompClient.connect('guest', 'guest', stompSuccessCallback, stompFailureCallback);
 }
 
 var sendContents = function () {
