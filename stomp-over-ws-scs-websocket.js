@@ -6,11 +6,11 @@ var randomWords = require('random-words');
 var url = require('url');
 var stompClient, socket;
 // active apollo
-var endpoint = 'ws://localhost:8080/endpoint';
-var usr = 'guest';
-var pwd = 'guest';
-var subdest = '/topic/jsongreetings';
-var pubdest = '/topic/jsongreet';
+var endpoint = 'ws://localhost:9292/websocket';
+var usr = '';
+var pwd = '';
+var subdest = '/topic/dest';
+var pubdest = '/topic/dest';
 
 var stompConnect = function () {
   var d = Q.defer();
